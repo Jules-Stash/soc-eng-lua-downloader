@@ -53,6 +53,7 @@ if %remote_size% equ %local_size% (
 	if errorlevel 1 (
 	    echo --- Failed to download ---
 	    :: Restore backup
+	    if exist "%TWLuaName%" del /f /q "%TWLuaName%"
 	    ren "_%TWLuaName%" "%TWLuaName%"
 	) else (
 	    echo --- Success ---
